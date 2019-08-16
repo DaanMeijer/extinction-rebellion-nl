@@ -27,3 +27,5 @@ wp-cli.local.yml
 **/.DS_Store
 !/web/app/themes/xrnl/.gitignore
 node_modules
+
+db_data

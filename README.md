@@ -1,3 +1,17 @@
+## Docker setup
+
+Clone the repository
+
+```sh
+cp .env.example .env
+# copy commercial plugins to web/app/plugins directory @todo
+docker-compose up -d
+```
+
+Visit http://localhost:8000
+
+---
+
 # [Bedrock](https://roots.io/bedrock/)
 [![Packagist](https://img.shields.io/packagist/v/roots/bedrock.svg?style=flat-square)](https://packagist.org/packages/roots/bedrock)
 [![Build Status](https://img.shields.io/travis/roots/bedrock.svg?style=flat-square)](https://travis-ci.org/roots/bedrock)
@@ -22,7 +36,7 @@ Much of the philosophy behind Bedrock is inspired by the [Twelve-Factor App](htt
 
 ## Installation
 
-1. Create a new project: 
+1. Create a new project:
     ```sh
     $ composer create-project roots/bedrock
     ```
@@ -40,7 +54,7 @@ Much of the philosophy behind Bedrock is inspired by the [Twelve-Factor App](htt
     * Generate with [wp-cli-dotenv-command](https://github.com/aaemnnosttv/wp-cli-dotenv-command)
     * Generate with [our WordPress salts generator](https://roots.io/salts.html)
 3. Add theme(s) in `web/app/themes/` as you would for a normal WordPress site
-4. Set the document root on your webserver to Bedrock's `web` folder: `/path/to/site/web/` 
+4. Set the document root on your webserver to Bedrock's `web` folder: `/path/to/site/web/`
 5. Access WordPress admin at `https://example.com/wp/wp-admin/`
 
 ## Documentation
