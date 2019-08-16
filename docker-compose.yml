@@ -21,14 +21,21 @@ services:
     build: .
     depends_on:
       - db
+      - composer
     volumes:
       - .:/var/www/html
       - ./vhost.conf:/etc/apache2/sites-available/000-default.conf
-    working_dir: /var/www/html
     ports:
       - 8000:80
     networks:
       - xrnl
+
+  composer:
+    image: composer
+    working_dir: /var/www/html
+    volumes:
+      - .:/var/www/html
+    command: install
 
 volumes:
     db_data: {}
