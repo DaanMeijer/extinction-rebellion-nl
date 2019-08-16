@@ -1,7 +1,10 @@
 ## Docker setup
 
-Clone the repository
+**Requirements:**
+- [Docker](https://www.docker.com/products/docker-desktop)
+- [Node.js](https://nodejs.org/en/)
 
+Run
 ```sh
 cp .env.example .env
 # copy commercial plugins to web/app/plugins directory @todo
