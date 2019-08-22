@@ -90,6 +90,7 @@ get_header(); ?>
   </div>
 
   <div class="container-fluid my-sm-5 my-4">
+    <a name="faq"></a>
     <div class="row py-5 text-center">
       <div class="col-12 col-lg-8 mx-auto">
         <h2><?php _e('FAQ AND PRACTICAL INFO', 'theme-xrnl'); ?></h2>
