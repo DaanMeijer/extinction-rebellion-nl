@@ -10,6 +10,13 @@
     }
   }
 
+
+  a.navbar-brand > img {
+    @include media-breakpoint-down(sm) {
+      height: 55px;
+    }
+  }
+
   .nav-item {
     margin: 0 0.5rem;
 
