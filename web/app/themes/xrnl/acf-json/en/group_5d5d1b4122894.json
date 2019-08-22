@@ -120,7 +120,7 @@
             "key": "field_5d5d1b413146c",
             "label": "RWB Join Description",
             "name": "rwb_join_description",
-            "type": "textarea",
+            "type": "wysiwyg",
             "instructions": "One paragraph explanation about different ways to join. And why it’s goot to sign up. And a link to the FAQ & practical info.",
             "required": 1,
             "conditional_logic": 0,
@@ -130,10 +130,10 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0,
             "wpml_cf_preferences": 2
         },
         {
@@ -280,7 +280,7 @@
         },
         {
             "key": "field_5d5d1b4131acc",
-            "label": "Sign up form code",
+            "label": "RWB Sign up form code",
             "name": "sign_up_form_code",
             "type": "wysiwyg",
             "instructions": "",
@@ -291,12 +291,114 @@
                 "class": "",
                 "id": ""
             },
+            "wpml_cf_preferences": 0,
             "default_value": "",
             "tabs": "all",
             "toolbar": "basic",
             "media_upload": 1,
-            "delay": 0,
-            "wpml_cf_preferences": 0
+            "delay": 0
+        },
+        {
+            "key": "field_5d5e5fd36a285",
+            "label": "RWB Do more description",
+            "name": "rwb_do_more_description",
+            "type": "textarea",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 2,
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": ""
+        },
+        {
+            "key": "field_5d5e60836a286",
+            "label": "RWB Do more",
+            "name": "rwb_do_more",
+            "type": "repeater",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "",
+            "wpml_cf_preferences": 2,
+            "sub_fields": [
+                {
+                    "key": "field_5d5e60fc6a288",
+                    "label": "Invite",
+                    "name": "invite",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0,
+                    "wpml_cf_preferences": 2
+                },
+                {
+                    "key": "field_5d5ecff1cc95b",
+                    "label": "title",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 2,
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5d5ed028cc95c",
+                    "label": "Description",
+                    "name": "description",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0,
+                    "wpml_cf_preferences": 2
+                }
+            ]
         }
     ],
     "location": [
@@ -316,5 +418,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1566382942
+    "modified": 1566494903
 }

@@ -6,20 +6,20 @@
 get_header(); ?>
 
 <div class="rwb">
-  <div class="bg-blue px-3 py-5 text-center text-white rwb-cover-image" style="background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.45)), url('<?php the_field('rwb_cover_image_url'); ?>') no-repeat;">
+  <div class="bg-blue px-3 py-lg-5 pb-5 text-center text-white rwb-cover-image" style="background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.45)), url('<?php the_field('rwb_cover_image_url'); ?>') no-repeat;">
     <div class="py-5">
       <h1 class="display-2"><?php the_title(); ?></h1>
       <h1 class="font-xr text-uppercase"><?php the_field('rwb_caption'); ?></h1>
     </div>
 
-    <br>
     <h1 class="font-xr text-uppercase"><?php the_field('rwb_date'); ?></h1>
     <div class="rwb-location">
       <?php the_field('rwb_location'); ?>
     </div>
 
     <div class="my-3">
-      <a class="btn btn-lg btn-blue" href="#details"><?php _e('JOIN'); ?></a>
+      <a class="btn btn-lg btn-blue" href="#details">
+        <?php _e('JOIN THE PROTEST'); ?></a>
     </div>
 
     <a href="<?php the_field('rwb_facebook_event_url'); ?>" target="_blank" class="text-white text-reset text-underline">
@@ -29,7 +29,7 @@ get_header(); ?>
     </a>
   </div>
 
-  <div class="text-center">
+  <div class="text-center my-sm-5 my-4">
     <a name="details"></a>
     <div class="container">
       <div class="row py-5">
@@ -43,7 +43,7 @@ get_header(); ?>
 
   <div class="bg-pink">
     <a name="join"></a>
-    <div class="container">
+    <div class="container py-sm-5 py-4">
       <div class="row py-5 text-center">
         <div class="col-12 col-lg-8 mx-auto">
           <h2><?php _e('JOIN REBEL WITHOUT BORDERS', 'theme-xrnl'); ?></h2>
@@ -56,8 +56,8 @@ get_header(); ?>
     </div>
   </div>
 
-  <div class="container text-center py-5">
-    <div class="row">
+  <div class="container text-center py-sm-5 py-4">
+    <div class="row py-5">
       <div class="col-12 col-lg-8 mx-auto">
         <h2>
           <?php _e('WHY ARE WE PROTESTING', 'theme-xrnl'); ?>?
@@ -76,7 +76,7 @@ get_header(); ?>
     </div>
   </div>
 
-  <div class="rwb-cover-image" style="background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.55)), url('<?php the_field('rwb_cover_image_url'); ?>') no-repeat; min-height: 45vh;">
+  <div class="rwb-cover-image my-sm-5 my-4" style="background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.55)), url('<?php the_field('rwb_why_protest_background_url'); ?>') no-repeat; min-height: 45vh;">
     <div class="container">
       <div class="row py-5 text-center text-white">
         <div class="col-12 col-lg-8 mx-auto my-5">
@@ -89,7 +89,7 @@ get_header(); ?>
     </div>
   </div>
 
-  <div class="container-fluid">
+  <div class="container-fluid my-sm-5 my-4">
     <div class="row py-5 text-center">
       <div class="col-12 col-lg-8 mx-auto">
         <h2><?php _e('FAQ AND PRACTICAL INFO', 'theme-xrnl'); ?></h2>
@@ -113,19 +113,25 @@ get_header(); ?>
     </div>
   </div>
 
-  <div class="bg-blue">
-    <div class="container">
-      <div class="row py-5 text-center">
-        <div class="col-12 col-lg-8 mx-auto">
-          <h2><?php _e('JOIN REBEL WITHOUT BORDERS', 'theme-xrnl'); ?></h2>
-          <?php the_field('rwb_join_description'); ?>
-          <div class="mt-3">
-            <a href="#join" class="btn btn-black btn-lg">
-              <?php _e('JOIN') ?> <i class="fas fa-chevron-up"></i>
-            </a>
+  <div class="container-fluid text-center bg-blue py-sm-5 mt-5 py-4 mt-4">
+    <div class="row pt-5">
+      <div class="col-12 col-lg-8 mx-auto">
+        <h2><?php _e('WANT TO DO MORE?', 'theme-xrnl'); ?></h2>
+        <?php the_field('rwb_do_more_description'); ?>
+      </div>
+    </div>
+
+    <div class="row text-center pb-5">
+      <?php while ( have_rows('rwb_do_more') ){ the_row(); ?>
+        <div class="col-12 col-lg-4 pt-5">
+          <h3 class="font-xr text-uppercase">
+            <?php _e(the_sub_field('title'), 'theme-xrnl'); ?>
+          </h3>
+          <div class="mt-3 px-3">
+            <?php the_sub_field('description'); ?>
           </div>
         </div>
-      </div>
+      <?php } ?>
     </div>
   </div>
 </div>

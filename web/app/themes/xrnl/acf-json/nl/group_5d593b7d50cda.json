@@ -28,7 +28,7 @@
             "name": "rwb_date",
             "type": "text",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -48,7 +48,7 @@
             "name": "rwb_location",
             "type": "text",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -68,7 +68,7 @@
             "name": "rwb_cover_image_url",
             "type": "url",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -85,16 +85,16 @@
             "name": "rwb_facebook_event_url",
             "type": "url",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
+            "wpml_cf_preferences": 0,
             "default_value": "",
-            "placeholder": "",
-            "wpml_cf_preferences": 0
+            "placeholder": ""
         },
         {
             "key": "field_5d59484ffa88b",
@@ -102,7 +102,7 @@
             "name": "rwb_meetup_event_url",
             "type": "text",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -120,7 +120,7 @@
             "key": "field_5d595a4031423",
             "label": "RWB Join Description",
             "name": "rwb_join_description",
-            "type": "textarea",
+            "type": "wysiwyg",
             "instructions": "One paragraph explanation about different ways to join. And why it’s goot to sign up. And a link to the FAQ & practical info.",
             "required": 1,
             "conditional_logic": 0,
@@ -130,17 +130,17 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0,
             "wpml_cf_preferences": 2
         },
         {
             "key": "field_5d595ac731424",
             "label": "RWB Why protest",
             "name": "rwb_why_protest",
-            "type": "textarea",
+            "type": "wysiwyg",
             "instructions": "One paragraph explanation about why we are protesting.",
             "required": 1,
             "conditional_logic": 0,
@@ -150,11 +150,28 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0,
             "wpml_cf_preferences": 2
+        },
+        {
+            "key": "field_5d5ee4c9142b6",
+            "label": "RWB Why Protest Background Image url",
+            "name": "rwb_why_protest_background_url",
+            "type": "url",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "wpml_cf_preferences": 0
         },
         {
             "key": "field_5d595b7231425",
@@ -200,7 +217,7 @@
             "key": "field_5d595c3f31427",
             "label": "RWB FAQ Description",
             "name": "rwb_faq_description",
-            "type": "textarea",
+            "type": "wysiwyg",
             "instructions": "",
             "required": 1,
             "conditional_logic": 0,
@@ -210,10 +227,10 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0,
             "wpml_cf_preferences": 2
         },
         {
@@ -280,7 +297,7 @@
         },
         {
             "key": "field_5d5d183789c26",
-            "label": "Sign up form code",
+            "label": "RWB Sign up form code",
             "name": "sign_up_form_code",
             "type": "wysiwyg",
             "instructions": "",
@@ -291,12 +308,94 @@
                 "class": "",
                 "id": ""
             },
+            "wpml_cf_preferences": 0,
             "default_value": "",
             "tabs": "all",
             "toolbar": "basic",
             "media_upload": 1,
-            "delay": 0,
-            "wpml_cf_preferences": 0
+            "delay": 0
+        },
+        {
+            "key": "field_5d5ed28b8f221",
+            "label": "RWB Do more description",
+            "name": "rwb_do_more_description",
+            "type": "textarea",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": "",
+            "wpml_cf_preferences": 2
+        },
+        {
+            "key": "field_5d5ed2ac8f222",
+            "label": "RWB Do more",
+            "name": "rwb_do_more",
+            "type": "repeater",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 2,
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_5d5ed2bd8f223",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 2,
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5d5ed2cc8f224",
+                    "label": "Description",
+                    "name": "description",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0,
+                    "wpml_cf_preferences": 2
+                }
+            ]
         }
     ],
     "location": [
@@ -316,5 +415,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1566382499
+    "modified": 1566500117
 }
