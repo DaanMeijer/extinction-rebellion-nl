@@ -22,8 +22,11 @@
 
   #can_embed_form form {
     input, select {
-      // we use a pink bg, so make the box shadow dark pink
-      box-shadow: 0 0 0.2rem 0.2rem rgba(163, 33, 167, 0.25);
+      &:focus,
+      &:active {
+        // we use a pink bg, so make the box shadow dark pink
+        box-shadow: 0 0 0.2rem 0.2rem rgba(163, 33, 167, 0.25);
+      }
     }
   }
 }

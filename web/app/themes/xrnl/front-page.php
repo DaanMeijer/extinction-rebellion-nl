@@ -33,9 +33,11 @@
         <?php endif; ?>
     <?php endif; ?>
     <?php the_field('home_cta'); ?>
-	<a href="#details" class="d-block my-5">
-        <i class="fas fa-chevron-down fa-2x <?php echo $chevron_class ?>"></i>
-    </a>
+    <?php if (!get_field('home_cta')) { ?>
+        <a href="#details" class="d-block my-5">
+            <i class="fas fa-chevron-down fa-2x <?php echo $chevron_class ?>"></i>
+        </a>
+    <?php } ?>
 </div>
 
 <div class="container-fluid">
