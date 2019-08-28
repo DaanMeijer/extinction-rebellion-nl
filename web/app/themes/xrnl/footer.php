@@ -17,7 +17,7 @@
                 </div>
 
                 <div class="col-md-4 my-4">
-                    <h3 class="font-xr text-uppercase">Evenementen</h3>
+                    <h3 class="font-xr text-uppercase"><?php _e('EVENTS') ?></h3>
                     <?php wp_nav_menu( [
                     'theme_location'  => 'footer-2',
                     'menu_class'      => 'list-unstyled',

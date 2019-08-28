@@ -18,7 +18,7 @@ get_header(); ?>
     </div>
 
     <div class="my-3">
-      <a class="btn btn-lg btn-blue" href="#details">
+      <a class="btn btn-lg btn-blue" href="#join">
         <?php _e('JOIN THE PROTEST'); ?></a>
     </div>
 
