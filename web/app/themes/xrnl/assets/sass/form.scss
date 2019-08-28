@@ -135,8 +135,7 @@
 
     // Misc overrides
     #d_sharing {
-      border: 0;
-      @include reset-text();
+      display: none;
     }
   }
 
