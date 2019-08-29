@@ -22,11 +22,7 @@ get_header(); ?>
         <?php _e('JOIN THE PROTEST'); ?></a>
     </div>
 
-    <a href="<?php the_field('rwb_facebook_event_url'); ?>" target="_blank" class="text-white text-reset text-underline">
-      Facebook
-    </a> or <a class="text-white text-reset text-underline" href="<?php the_field('rwb_meetup_event_url'); ?>" target="_blank">
-      Meetup
-    </a>
+    <a href="<?php the_field('rwb_facebook_event_url'); ?>" target="_blank" class="text-white text-reset text-underline">Facebook</a> <?php _e('or') ?> <a class="text-white text-reset text-underline" href="<?php the_field('rwb_meetup_event_url'); ?>" target="_blank">Meetup</a>
   </div>
 
   <div class="text-center my-sm-5 my-4">
