@@ -118,3 +118,14 @@ function blog_sidebar() {
 	) );
 }
 add_action( 'widgets_init', 'blog_sidebar' );
+
+
+// Yoast SEO seems to not render og:image, so we are going to do this
+// hack
+function add_og_image() {
+    if (is_page('rebel-without-borders')) {
+    ?>
+        <meta name="og:image" content="https://extinctionrebellion.nl/app/uploads/2019/08/homepage-video-overlay.jpg" />
+    <?php }
+}
+add_action( 'wp_head', 'add_og_image' );
