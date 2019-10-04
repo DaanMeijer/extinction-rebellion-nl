@@ -133,16 +133,12 @@ function add_og_image() {
 add_action( 'wp_head', 'add_og_image' );
 
 // Make sure events details page has `/events/:slug` url instead of `/meetup-event/:slug`
-if (is_plugin_active('import-meetup-events/import-meetup-events.php')) {
-    class CustomMeetupEventCpt extends Import_Meetup_Events_Cpt {
-        public function __construct() {
-            parent::__construct();
-            $this->event_slug = 'events';
-        }
+add_filter( 'register_post_type_args', function($args, $post_type){
+    if ( $post_type == 'meetup_events') {
+        $args['rewrite']['slug'] = 'events';
     }
-
-    Import_Meetup_Events::instance()->cpt = new CustomMeetupEventCpt();
-}
+    return $args;
+}, 10, 2 );
 
 // Get Distinct Event cities
 function event_cities() {
