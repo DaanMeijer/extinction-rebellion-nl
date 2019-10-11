@@ -42,7 +42,8 @@ get_header(); ?>
       </div>
     </div>
     <div class="text-center">
-      <img src="<?php the_field('image'); ?>" class="img-fluid mb-2" />
+      <img src="<?php the_field('image'); ?>" class="image-desktop img-fluid mb-2" />
+      <img src="<?php the_field('image_mobile'); ?>" class="image-mobile img-fluid mb-2" />
     </div>
   </div>
 

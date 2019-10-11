@@ -209,3 +209,21 @@ a:hover u {
   min-height: 45vh;
   background-size: cover !important;
 }
+
+.image-desktop {
+  display: block;
+}
+
+.image-mobile {
+  display: none;
+}
+
+@media all and (max-width: 499px) {
+  .image-desktop {
+    display: none;
+  }
+
+  .image-mobile {
+    display: block;
+  }
+}
