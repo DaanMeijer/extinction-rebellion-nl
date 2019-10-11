@@ -69,7 +69,7 @@ get_header(); ?>
     </div>
   </div>
 
-  <div class="cover-image" style="background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.55)), url('<?php the_field('join_cover_image_url'); ?>') no-repeat; min-height: 45vh;">
+  <div class="cover-image" style="background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.55)), url('<?php the_field('join_cover_image'); ?>') no-repeat; background-position: 50% 90%;">
     <div class="container">
       <div class="row py-5 text-center text-white">
         <div class="col-12 col-lg-8 mx-auto my-5">
@@ -82,5 +82,3 @@ get_header(); ?>
 </div>
 
 <?php get_footer(); ?>
-
-

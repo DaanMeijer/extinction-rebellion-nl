@@ -204,3 +204,8 @@ a:hover u {
     max-width: calc(100vw - 30px);
   }
 }
+
+.cover-image {
+  min-height: 45vh;
+  background-size: cover !important;
+}
