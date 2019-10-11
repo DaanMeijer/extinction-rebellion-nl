@@ -13,12 +13,14 @@ get_header(); ?>
   </div>
 
   <div class="text-center py-5 bg-light">
-    <div class="container my-sm-5 my-4">
+    <div class="container mt-sm-5 mt-4">
       <div class="row">
         <div class="col-12 col-lg-10 mx-auto">
           <h1><?php the_field('why_title'); ?></h1>
           <?php the_field('why_description'); ?>
         </div>
+      </div>
+      <div class="row">
         <div class="col-12 col-lg-6 mx-auto mt-3">
           <a class="btn btn-yellow btn-lg" data-toggle="collapse" href="#demands" role="button" aria-expanded="false" aria-controls="demands">
             <?php _e('OUR DEMANDS', 'theme-xrnl'); ?>
@@ -27,6 +29,11 @@ get_header(); ?>
           <div class="text-left collapse" id="demands">
             <?php the_field('demands'); ?>
           </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 text-center pt-5">
+          <img src="<?php the_field('logo'); ?>" style="width: 100px;"/>
         </div>
       </div>
     </div>

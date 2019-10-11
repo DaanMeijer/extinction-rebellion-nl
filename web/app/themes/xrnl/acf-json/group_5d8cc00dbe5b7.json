@@ -80,6 +80,31 @@
             "wpml_cf_preferences": 0
         },
         {
+            "key": "field_5da084d683552",
+            "label": "logo",
+            "name": "logo",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "return_format": "url",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
             "key": "field_5d8cc85cffb55",
             "label": "who we are title",
             "name": "who_we_are_title",
@@ -481,5 +506,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1570799575
+    "modified": 1570801966
 }
