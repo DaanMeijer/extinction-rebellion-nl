@@ -365,6 +365,65 @@
                     "mime_types": ""
                 }
             ]
+        },
+        {
+            "key": "field_5f61f8030dde0",
+            "label": "Donate step text",
+            "name": "donate_step_text",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0,
+            "wpml_cf_preferences": 0
+        },
+        {
+            "key": "field_5f61f8140dde1",
+            "label": "Share step text",
+            "name": "share_step_text",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "default_value": "",
+            "delay": 0
+        },
+        {
+            "key": "field_5f61fcc808a30",
+            "label": "WhyDonate shortcode",
+            "name": "whydonate_shortcode",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -384,5 +443,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1600097106
+    "modified": 1600257296
 }

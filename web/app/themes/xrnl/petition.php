@@ -75,15 +75,41 @@ get_header(); ?>
         <a name="sign"></a>
         <div class="row py-5">
             <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-6 mx-auto">
-                <h2 class="text-uppercase font-xr">
-                    <span class="display-3" id="total-submissions"><?= $total_submissions ?></span> van <span id="max-submissions"><?= $max_submissions ?></span> handtekeningen
-                </h2>
+                <div class="sign-step">
+                    <h2 class="text-uppercase font-xr">
+                        <span class="display-3" id="total-submissions"><?= $total_submissions ?></span> van <span id="max-submissions"><?= $max_submissions ?></span> handtekeningen
+                    </h2>
 
-                <div class="progress" style="height: 20px;border-radius: 5px; margin-bottom: 20px;">
-                    <div class="progress-bar" role="progressbar" style="width: <?= $percent ?>%; background: black" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress" style="height: 20px;border-radius: 5px; margin-bottom: 20px;">
+                        <div class="progress-bar" role="progressbar" style="width: <?= $percent ?>%; background: black" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+
+                    <?= do_shortcode(get_field('actionnetwork_shortcode')) ?>
                 </div>
 
-                <?= do_shortcode(get_field('actionnetwork_shortcode')) ?>
+                <div class="donate-step">
+                    <h1><?= _e("THANKS! YOU'RE AWESOME", 'theme-xrnl'); ?></h1>
+                    <div class="text-center">
+                        <?= get_field('donate_step_text') ?>
+                    </div>
+
+                    <?= do_shortcode(get_field('whydonate_shortcode')) ?>
+                    <a class="btn my-2 btn-lg" href="#sign">
+                        <?= _e('NO THANKS', 'theme-xrnl'); ?>
+                    </a>
+                </div>
+
+                <div class="share-step text-center">
+                    <h1><?= _e('ONE LAST THING', 'theme-xrnl'); ?></h1>
+                    <div class="text-center">
+                        <?= get_field('share_step_text') ?>
+                    </div>
+                    <div class="share-links">
+                        <a class="btn btn-black my-2"><?= _e('SHARE ON WHATSAPP', 'theme-xrnl'); ?></a>
+                        <a class="btn btn-black my-2"><?= _e('SHARE ON FACEBOOK', 'theme-xrnl'); ?></a>
+                        <a class="btn btn-black my-2"><?= _e('SHARE ON TWITTER', 'theme-xrnl'); ?></a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -103,7 +129,7 @@ get_header(); ?>
                         <i class="fas fa-chevron-down"></i>
                     </a>
                     <div class="text-left collapse collapse" id="demands">
-                         <!-- This is some horrible hardcoded code. Must be refactored into an ACF options page, so that the demands can be edit from wordpress and imported in different places (about us, petition...) --> 
+                         <!-- This is some horrible hardcoded code. Must be refactored into an ACF options page, so that the demands can be edit from wordpress and imported in different places (about us, petition...) -->
                         <?php if (ICL_LANGUAGE_CODE=='nl') : ?>
                         <div class="mt-4">Wij eisen van de Nederlandse overheid:</div>
                         <ol class="pl-3 counter mt-3">

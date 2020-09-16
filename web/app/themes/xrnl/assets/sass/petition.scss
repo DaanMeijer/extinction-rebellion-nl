@@ -1,3 +1,4 @@
+@import "variables";
 
 .petition {
   font-size: 1.4rem;
@@ -5,6 +6,57 @@
   section {
     padding: 4rem 0.2rem;
   }
+
+
+  /**
+   * Steps
+   */
+  .donate-step {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .style-container-shortcode {
+      width: 100%;
+    }
+
+    .appearance-preview {
+      justify-content: center;
+    }
+
+    .apreview-donate-btn {
+      background-color: $xr-warm-yellow !important;
+      color: black;
+    }
+
+    .apreview-full-bar, .apreview-raised-bar {
+      height: 15px;
+    }
+
+    .apreview-raised-bar {
+      background-color: $xr-warm-yellow !important;
+    }
+  }
+
+  .donate-step, .share-step {
+    .text-center {
+      margin-bottom: 20px;
+    }
+  }
+
+  .share-step {
+    .btn {
+      color: white;
+    }
+
+    .share-links {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+
+
 
   .petition-cover-image {
     min-height: 30vh;
