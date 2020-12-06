@@ -20,12 +20,13 @@ services:
 
   php:
     build: .
+    image: extinctionrebellion/website:dev
     depends_on:
       - db
       - composer
     volumes:
-      - .:/var/www/html
-      - ./vhost.conf:/etc/apache2/sites-available/000-default.conf
+      - plugins:/var/www/html
+      #- ./vhost.conf:/etc/apache2/sites-available/000-default.conf
     ports:
       - 8000:80
     networks:
@@ -35,12 +36,15 @@ services:
     image: composer
     working_dir: /var/www/html
     volumes:
-      - .:/var/www/html
+      - plugins:/var/www/html
     command: install
+    depends_on:
+      - "php"
 
 volumes:
   db_data: {}
   metabase_data: {}
+  plugins:
 
 networks:
   xrnl:
