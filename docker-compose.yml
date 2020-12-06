@@ -4,7 +4,7 @@ services:
   db:
     image: mariadb
     volumes:
-      - ./db_data:/var/lib/mysql
+      - db_data:/var/lib/mysql
     ports:
       - 3306
     restart: always
@@ -19,31 +19,28 @@ services:
       - xrnl
 
   php:
-    build: .
     image: extinctionrebellion/website:dev
     depends_on:
       - db
       - composer
     volumes:
       - plugins:/var/www/html
-      #- ./vhost.conf:/etc/apache2/sites-available/000-default.conf
+      - vhost:/etc/apache2/sites-available/
     ports:
       - 8000:80
     networks:
       - xrnl
 
   composer:
-    image: composer
+    image: extinctionrebellion/composer:dev
     working_dir: /var/www/html
     volumes:
       - plugins:/var/www/html
     command: install
-    depends_on:
-      - "php"
 
 volumes:
   db_data: {}
-  metabase_data: {}
+  vhost:
   plugins:
 
 networks:

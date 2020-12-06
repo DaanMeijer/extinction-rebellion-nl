@@ -1,0 +1,642 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2020-05-11 17:10+0600\n"
+"PO-Revision-Date: 2020-05-11 17:15+0600\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e;_esc_attr\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: admin/admin-menu.php:117 admin/admin-menu.php:118
+#: admin/setup/wdplugin-settings-display-page.php:13
+#: admin/setup/wdplugin-settings-display-page.php:49 whydonate-v2.php:372
+msgid "Account setup"
+msgstr "Einrichtung eines Kontos"
+
+#: admin/admin-menu.php:163 admin/admin-menu.php:164
+#: admin/setup/wdplugin-fundraiser-list.php:9
+#: admin/setup/wdplugin-widget-list.php:19
+msgid "Fundraisers"
+msgstr "Spendenaktionen"
+
+#: admin/admin-menu.php:172 admin/admin-menu.php:173
+#: admin/setup/wdplugin-widget-list.php:10
+msgid "Widgets"
+msgstr "Widgets"
+
+#: admin/admin-menu.php:181 admin/admin-menu.php:182
+msgid "Styling"
+msgstr "Gestaltung"
+
+#: admin/admin-menu.php:190 admin/admin-menu.php:191
+msgid "Donations"
+msgstr "Spenden"
+
+#: admin/setup/wdplugin-donation.php:12 admin/setup/wdplugin-donation.php:21
+msgid "Go to my Whydonate Dashboard"
+msgstr "Gehen Sie zu meinem Whydonate-Dashboard"
+
+#: admin/setup/wdplugin-donation.php:13 admin/setup/wdplugin-donation.php:22
+msgid ""
+"Click the button above to view all donations. You will be automatically "
+"redirected to the Whydonate Dashboard."
+msgstr ""
+"Klicken Sie auf die Schaltfläche oben, um alle Spenden anzuzeigen. Sie "
+"werden automatisch zum Whydonate Dashboard weitergeleitet."
+
+#: admin/setup/wdplugin-fundraiser-list.php:10
+#: admin/setup/wdplugin-fundraiser-list.php:79
+#: admin/setup/wdplugin-fundraiser-list.php:98
+msgid "Add Fundraiser"
+msgstr "Fundraiser hinzufügen"
+
+#: admin/setup/wdplugin-fundraiser-list.php:16
+msgid "ID"
+msgstr "ID"
+
+#: admin/setup/wdplugin-fundraiser-list.php:17
+msgid "Title"
+msgstr "Titel"
+
+#: admin/setup/wdplugin-fundraiser-list.php:18
+msgid "Created On"
+msgstr "Erstellt am"
+
+#: admin/setup/wdplugin-fundraiser-list.php:19
+#: admin/setup/wdplugin-widget-list.php:21
+msgid "Action"
+msgstr "Aktion"
+
+#: admin/setup/wdplugin-fundraiser-list.php:69
+msgid "The API key doesn't seem to work. Please check it."
+msgstr ""
+"Der API-Schlüssel scheint nicht zu funktionieren. Bitte überprüfen Sie ihn."
+
+#: admin/setup/wdplugin-fundraiser-list.php:78
+#: admin/setup/wdplugin-widget-list.php:132
+msgid "It seems like you haven't created any fundraiser yet."
+msgstr "Es scheint, als hätten Sie noch keine Spendenaktion ins Leben gerufen."
+
+#: admin/setup/wdplugin-fundraiser-list.php:85
+msgid ""
+"Good news! Fundraiser created from this plugin can also be made visible "
+"Whydonate. To reach more people and increase your chances of donations, "
+"publish your fundraiser on the <a href=\" https://www.whydonate.eu/dashboard"
+"\" target=\"blank\">Whydonate platform</a> by adding the required extra "
+"information."
+msgstr ""
+"Gute Nachrichten! Die mit diesem Plugin erstellte Spendenaktion kann auch "
+"Whydonate sichtbar gemacht werden. Um mehr Menschen zu erreichen und Ihre "
+"Chancen auf Spenden zu erhöhen, veröffentlichen Sie Ihre Spendenaktion auf "
+"der <a href=\" https://www.whydonate.eu/dashboard\" target=\"blank"
+"\">Whydonate-Plattform </a>, indem Sie die erforderlichen "
+"Zusatzinformationen hinzufügen."
+
+#: admin/setup/wdplugin-fundraiser-list.php:97
+#: admin/setup/wdplugin-plugin-style-list.php:77
+#: admin/setup/wdplugin-widget-list.php:118
+msgid "Back"
+msgstr "Zurück"
+
+#: admin/setup/wdplugin-fundraiser-list.php:104
+msgid "Title fundraiser"
+msgstr "Titel-Spendenaktion"
+
+#: admin/setup/wdplugin-fundraiser-list.php:106
+msgid "(Maximum of 70 characters)"
+msgstr "(Maximal 70 Zeichen)"
+
+#: admin/setup/wdplugin-fundraiser-list.php:107
+msgid "Please add a title"
+msgstr "Bitte fügen Sie einen Titel hinzu"
+
+#: admin/setup/wdplugin-fundraiser-list.php:111
+msgid "Optional fields"
+msgstr "Optionale Felder"
+
+#: admin/setup/wdplugin-fundraiser-list.php:113
+msgid "Target Amount"
+msgstr "Zielbetrag"
+
+#: admin/setup/wdplugin-fundraiser-list.php:115
+#: admin/setup/wdplugin-fundraiser-list.php:123
+msgid "(optional)"
+msgstr "(fakultativ)"
+
+#: admin/setup/wdplugin-fundraiser-list.php:116
+msgid "Decimals are not allowed."
+msgstr "Dezimalzahlen sind nicht erlaubt."
+
+#: admin/setup/wdplugin-fundraiser-list.php:117
+msgid "Negetive amount is not allowed."
+msgstr "Negativer Betrag ist nicht erlaubt."
+
+#: admin/setup/wdplugin-fundraiser-list.php:121
+#: admin/setup/wdplugin-plugin-style-list.php:108
+msgid "End Date"
+msgstr "Enddatum"
+
+#: admin/setup/wdplugin-fundraiser-list.php:129
+msgid "Tipbox settings"
+msgstr "Tippbox die Einstellungen"
+
+#: admin/setup/wdplugin-fundraiser-list.php:133
+msgid "Enable"
+msgstr "Aktivieren"
+
+#: admin/setup/wdplugin-fundraiser-list.php:137
+msgid "Disable"
+msgstr "Deaktivieren"
+
+#: admin/setup/wdplugin-fundraiser-list.php:146
+#: admin/setup/wdplugin-plugin-style-list.php:196
+#: admin/setup/wdplugin-settings-display-page.php:98
+#: admin/setup/wdplugin-widget-list.php:184
+msgid "Save"
+msgstr "Speichern Sie"
+
+#: admin/setup/wdplugin-plugin-style-list.php:11
+#: admin/setup/wdplugin-widget-list.php:18
+msgid "All styles"
+msgstr "Alle Stile"
+
+#: admin/setup/wdplugin-plugin-style-list.php:12
+#: admin/setup/wdplugin-plugin-style-list.php:62
+#: admin/setup/wdplugin-plugin-style-list.php:78
+msgid "Add style"
+msgstr "Stil hinzufügen"
+
+#: admin/setup/wdplugin-plugin-style-list.php:41
+#: admin/setup/wdplugin-widget-list.php:57
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: admin/setup/wdplugin-plugin-style-list.php:42
+#: admin/setup/wdplugin-widget-list.php:58
+msgid "Remove"
+msgstr "Entfernen"
+
+#: admin/setup/wdplugin-plugin-style-list.php:59
+msgid "It seems you haven’t created any styles yet."
+msgstr "Es scheint, als hätten Sie noch keine Spendenaktion ins Leben gerufen."
+
+#: admin/setup/wdplugin-plugin-style-list.php:90
+msgid "Style Name"
+msgstr "Name des Stils"
+
+#: admin/setup/wdplugin-plugin-style-list.php:99
+#: admin/setup/wdplugin-plugin-style-list.php:206
+msgid "Widget options"
+msgstr "Widget-Optionen"
+
+#: admin/setup/wdplugin-plugin-style-list.php:102
+msgid "Widget appearance"
+msgstr "Widget-Darstellung"
+
+#: admin/setup/wdplugin-plugin-style-list.php:105
+msgid "Donation Button"
+msgstr "Schaltfläche \"Spende"
+
+#: admin/setup/wdplugin-plugin-style-list.php:106
+msgid "Progressbar"
+msgstr "Fortschrittsbalken"
+
+#: admin/setup/wdplugin-plugin-style-list.php:107
+msgid "Amount Raised"
+msgstr "Erhöhter Betrag"
+
+#: admin/setup/wdplugin-plugin-style-list.php:109
+msgid "No widget, show donation form only"
+msgstr "Kein Widget, nur das Spendenformular anzeigen"
+
+#: admin/setup/wdplugin-plugin-style-list.php:110
+msgid "Do not show box"
+msgstr "Box nicht anzeigen"
+
+#: admin/setup/wdplugin-plugin-style-list.php:117
+msgid "Select and edit amounts"
+msgstr "Beträge auswählen und bearbeiten"
+
+#: admin/setup/wdplugin-plugin-style-list.php:145
+msgid "Donation intervals"
+msgstr "Spenden-Intervalle"
+
+#: admin/setup/wdplugin-plugin-style-list.php:147
+msgid "One time"
+msgstr "Einmalig"
+
+#: admin/setup/wdplugin-plugin-style-list.php:148
+#: admin/setup/wdplugin-plugin-style-list.php:266
+#: includes/shortcode-app-view.php:437
+msgid "Monthly"
+msgstr "Monatlich"
+
+#: admin/setup/wdplugin-plugin-style-list.php:149
+#: admin/setup/wdplugin-plugin-style-list.php:269
+#: includes/shortcode-app-view.php:445
+msgid "Yearly"
+msgstr "Jährlich"
+
+#: admin/setup/wdplugin-plugin-style-list.php:157
+msgid "Branding options"
+msgstr "Branding-Optionen"
+
+#: admin/setup/wdplugin-plugin-style-list.php:160
+msgid "Color"
+msgstr "Farbe"
+
+#: admin/setup/wdplugin-plugin-style-list.php:168
+msgid "Font"
+msgstr "Schriftart"
+
+#: admin/setup/wdplugin-plugin-style-list.php:179
+msgid "Button Radius"
+msgstr "Schaltfläche Radius"
+
+#: admin/setup/wdplugin-plugin-style-list.php:186
+msgid "Donation form title"
+msgstr "Titel des Spendenformulars"
+
+#: admin/setup/wdplugin-plugin-style-list.php:218
+#: includes/shortcode-app-view.php:327
+msgid "of"
+msgstr "of"
+
+#: admin/setup/wdplugin-plugin-style-list.php:232
+#: includes/shortcode-app-view.php:358
+msgid "funded"
+msgstr "finanziert"
+
+#: admin/setup/wdplugin-plugin-style-list.php:235
+#: includes/shortcode-app-view.php:367
+msgid "day(s) left"
+msgstr "verbleibende(r) Tag(e)"
+
+#: admin/setup/wdplugin-plugin-style-list.php:241
+#: admin/setup/wdplugin-plugin-style-list.php:318
+#: admin/setup/wdplugin-plugin-style-list.php:323
+#: includes/shortcode-app-view.php:377 includes/shortcode-app-view.php:556
+#: includes/shortcode-app-view.php:561
+msgid "Donate"
+msgstr "Spenden"
+
+#: admin/setup/wdplugin-plugin-style-list.php:247
+msgid "Donation form appearance"
+msgstr "Aussehen des Spendenformulars"
+
+#: admin/setup/wdplugin-plugin-style-list.php:263
+#: includes/shortcode-app-view.php:428
+msgid "One Time"
+msgstr "Einmalig"
+
+#: admin/setup/wdplugin-plugin-style-list.php:283
+#: includes/shortcode-app-view.php:473
+msgid "Select Amount"
+msgstr "Betrag auswählen"
+
+#: admin/setup/wdplugin-plugin-style-list.php:299
+#: includes/shortcode-app-view.php:514
+msgid "Other"
+msgstr "Andere"
+
+#: admin/setup/wdplugin-plugin-style-list.php:305
+#: includes/shortcode-app-view.php:530
+msgid "First name"
+msgstr "Vorname"
+
+#: admin/setup/wdplugin-plugin-style-list.php:308
+#: includes/shortcode-app-view.php:535
+msgid "Last name"
+msgstr "Nachname"
+
+#: admin/setup/wdplugin-plugin-style-list.php:311
+#: includes/shortcode-app-view.php:540
+msgid "Email"
+msgstr "E-Mail"
+
+#: admin/setup/wdplugin-plugin-style-list.php:319
+#: includes/shortcode-app-view.php:557
+msgid "Anonymous"
+msgstr "Anonym"
+
+#: admin/setup/wdplugin-plugin-style-list.php:326
+msgid ""
+"By donate you agree to our <a href=\"https://www.whydonate.nl/terms-and-"
+"conditions/?lang=en\" target=\"blank\">Terms & Conditions</a>"
+msgstr ""
+"Mit Ihrer Spende erklären Sie sich mit unseren <a href=\"https://www."
+"whydonate.eu/terms-and-conditions/?lang=en\" target=\"blank\">Allgemeinen "
+"Geschäftsbedingungen einverstanden</a>"
+
+#: admin/setup/wdplugin-plugin-style-list.php:329
+#: includes/shortcode-app-view.php:567
+msgid "Powered by "
+msgstr "Angetrieben von "
+
+#: admin/setup/wdplugin-settings-display-page.php:9
+#: admin/setup/wdplugin-settings-display-page.php:83
+msgid "Your plugin is now connected to this account: "
+msgstr "Ihr Plugin ist nun mit diesem Konto verbunden "
+
+#: admin/setup/wdplugin-settings-display-page.php:15
+msgid "How to use this plugin"
+msgstr "Wie man dieses Plugin verwendet"
+
+#: admin/setup/wdplugin-settings-display-page.php:20
+msgid "1. Connect the plugin to your Whydonate account"
+msgstr "1. Verbinden Sie das Plugin mit Ihrem Whydonate-Konto"
+
+#: admin/setup/wdplugin-settings-display-page.php:22
+msgid "For Whydonate members: "
+msgstr "Für Whydonate-Mitglieder "
+
+#: admin/setup/wdplugin-settings-display-page.php:22
+msgid ""
+"Open your <a href='https://www.whydonate.eu/profile' style='text-decoration:"
+"none' target='blank'> Whydonate Profile</a> and click the API Key menu. "
+"Generate a new API Key and copy-paste it to the bottom of this page."
+msgstr ""
+"Öffnen Sie Ihr <a href=\"https://www.whydonate.eu/profile\" style=\"text-"
+"decoration:none\" target=\"blank\">Whydonate-Profil </a> und klicken Sie auf "
+"das Menü API-Schlüssel. Generieren Sie einen neuen API-Schlüssel und fügen "
+"Sie ihn per Kopieren und Einfügen unten auf dieser Seite ein."
+
+#: admin/setup/wdplugin-settings-display-page.php:25
+msgid "No Whydonate account yet: "
+msgstr "Noch kein Whydonate-Konto "
+
+#: admin/setup/wdplugin-settings-display-page.php:25
+msgid ""
+"<a href=\"https://www.whydonate.eu/registration/en\" style=\"text-decoration:"
+"none\" target=\"blank\">Register for free at Whydonate</a>. Open your <a "
+"href=\"https://www.whydonate.eu/registration/eu\" style=\"text-decoration:"
+"none\" target=\"blank\">Whydonate Profile</a> and click the API Key menu. "
+"Generate a new API Key and copy-paste it to the bottom of this page."
+msgstr ""
+"<a href=\"https://www.whydonate.eu/registration/en\" style=\"text-decoration:"
+"none\" target=\"blank\">Registrieren Sie sich kostenlos bei Whydonate</a>. "
+"Öffnen Sie Ihr <a href=\"https://www.whydonate.eu/registration/eu\" style="
+"\"text-decoration:none\" target=\"blank\">Whydonate-Profil</a> und klicken "
+"Sie auf das Menü API-Schlüssel. Generieren Sie einen neuen API-Schlüssel und "
+"fügen Sie ihn per Kopieren und Einfügen unten auf dieser Seite ein."
+
+#: admin/setup/wdplugin-settings-display-page.php:30
+msgid "2. Create a Widget"
+msgstr "2. Widget erstellen"
+
+#: admin/setup/wdplugin-settings-display-page.php:32
+msgid ""
+"Create a new fundraiser or select an existing fundraiser from your "
+"fundraiser list. Change the style as you like and then save this in your "
+"widgets."
+msgstr ""
+"Erstellen Sie eine neue Benefizveranstaltung oder wählen Sie eine bestehende "
+"Veranstaltung aus Ihrer Liste der Benefizveranstaltungen aus. Ändern Sie den "
+"Stil nach Belieben und speichern Sie ihn dann in Ihren Widgets."
+
+#: admin/setup/wdplugin-settings-display-page.php:37
+msgid "3. Add the widget to your Website"
+msgstr "3. Fügen Sie das Widget zu Ihrer Website hinzu"
+
+#: admin/setup/wdplugin-settings-display-page.php:39
+msgid ""
+"Copy the \"Shortcode\" of the widget that you want to place and paste it "
+"directly on the page. A shortcode looks like this: [whydonate id = \"*****\"]"
+msgstr ""
+"Kopieren Sie den \"Shortcode\" des Widgets, das Sie platzieren möchten, und "
+"fügen Sie ihn direkt auf der Seite ein. Ein \"Shortcode\" sieht wie folgt "
+"aus: [whydonate id = \"*****\"]"
+
+#: admin/setup/wdplugin-settings-display-page.php:55
+msgid "I have a Whydonate account"
+msgstr "Ich habe ein Whydonate-Konto"
+
+#: admin/setup/wdplugin-settings-display-page.php:58
+msgid "I don't have a Whydonate account"
+msgstr "Ich habe ein Whydonate-Konto"
+
+#: admin/setup/wdplugin-settings-display-page.php:67
+msgid "Api Key"
+msgstr "Api-Schlüssel"
+
+#: admin/setup/wdplugin-settings-display-page.php:69
+msgid "Enter your api-key."
+msgstr "Geben Sie Ihren api-Schlüssel ein."
+
+#: admin/setup/wdplugin-settings-display-page.php:70
+msgid "Your api-key is not valid. We failed to connect the plugin."
+msgstr ""
+"Ihr api-Schlüssel ist nicht gültig. Wir konnten das Plugin nicht anschließen."
+
+#: admin/setup/wdplugin-settings-display-page.php:71
+msgid "Updating the api-key..."
+msgstr "Aktualisierung des api-Schlüssels..."
+
+#: admin/setup/wdplugin-settings-display-page.php:72
+msgid "Update success."
+msgstr "Erfolg aktualisieren."
+
+#: admin/setup/wdplugin-settings-display-page.php:93
+msgid ""
+"Open your <a href=\"https://whydonate.eu/profile\" style=\"text-decoration:"
+"none\" target=\"blank\"> Whydonate Profile</a> and click the API Key menu. "
+"Generate a new API Key and copy-paste it to the bottom of this page. "
+msgstr ""
+"Öffnen Sie Ihr <a href=\"https://www.whydonate.eu/profile\" style=\"text-"
+"decoration:none\" target=\"blank\">Whydonate-Profil</a> und klicken Sie auf "
+"das Menü API-Schlüssel. Generieren Sie einen neuen API-Schlüssel und fügen "
+"Sie ihn per Kopieren und Einfügen unten auf dieser Seite ein. "
+
+#: admin/setup/wdplugin-settings-display-page.php:107
+msgid ""
+"<a href=\"https://www.whydonate.eu/registration/en\" style=\"text-decoration:"
+"none\" target=\"blank\">Register for free at Whydonate</a>. Open your <a "
+"href=\"https://whydonate.eu/profile\" style=\"text-decoration:none\" target="
+"\"blank\">Whydonate Profile</a> and click the API Key menu. Generate a new "
+"API Key and copy-paste it to the bottom of this page."
+msgstr ""
+"<a href=\"https://www.whydonate.eu/registration/en\" style=\"text-decoration:"
+"none\" target=\"blank\">Registrieren Sie sich kostenlos bei Whydonate</a>. "
+"Öffnen Sie Ihr <a href=\"https://www.whydonate.eu/registration/eu\" style="
+"\"text-decoration:none\" target=\"blank\">Whydonate-Profil</a> und klicken "
+"Sie auf das Menü API-Schlüssel. Generieren Sie einen neuen API-Schlüssel und "
+"fügen Sie ihn per Kopieren und Einfügen unten auf dieser Seite ein."
+
+#: admin/setup/wdplugin-widget-list.php:11
+msgid "Add Widget"
+msgstr "Widget hinzufügen"
+
+#: admin/setup/wdplugin-widget-list.php:17
+msgid "Widget ID"
+msgstr "Widget-ID"
+
+#: admin/setup/wdplugin-widget-list.php:20
+msgid "Shortcode"
+msgstr "Shortcode"
+
+#: admin/setup/wdplugin-widget-list.php:37
+msgid "It seems you haven’t created any widgets yet."
+msgstr "Es scheint, als hätten Sie noch keine Spendenaktion ins Leben gerufen."
+
+#: admin/setup/wdplugin-widget-list.php:40
+msgid "Add widget"
+msgstr "Widget hinzufügen"
+
+#: admin/setup/wdplugin-widget-list.php:56
+msgid "Copy shortcode"
+msgstr "Shortcode kopieren"
+
+#: admin/setup/wdplugin-widget-list.php:124
+msgid "Select fundraiser"
+msgstr "Fundraiser auswählen"
+
+#: admin/setup/wdplugin-widget-list.php:131
+msgid "Something went wrong. Please check your api-key."
+msgstr "Etwas ist schief gelaufen. Bitte überprüfen Sie Ihren api-Schlüssel."
+
+#: admin/setup/wdplugin-widget-list.php:143
+msgid "Select style"
+msgstr "Stil auswählen"
+
+#: admin/setup/wdplugin-widget-list.php:145
+msgid "Choose your option"
+msgstr "Wählen Sie Ihre Option"
+
+#: admin/setup/wdplugin-widget-list.php:146
+msgid "Default"
+msgstr "Standardmäßig"
+
+#: admin/setup/wdplugin-widget-list.php:159
+msgid "You can"
+msgstr "Sie können"
+
+#: admin/setup/wdplugin-widget-list.php:161
+msgid "create a custom plugin style"
+msgstr "einen benutzerdefinierten Plugin-Stil erstellen"
+
+#: admin/setup/wdplugin-widget-list.php:163
+msgid "which fits the look of your website"
+msgstr "die zum Aussehen Ihrer Website passt"
+
+#: admin/setup/wdplugin-widget-list.php:169
+msgid "Successful payment redirect URL"
+msgstr "Erfolgreiche Zahlungsumleitungs-URL"
+
+#: admin/setup/wdplugin-widget-list.php:171
+msgid "The URL where the donor is sent after a successful payment."
+msgstr ""
+"Die Seite, auf der der Spender nach einer erfolgreichen Zahlung gesendet "
+"wird."
+
+#: admin/setup/wdplugin-widget-list.php:176
+msgid "Failed payment redirect URL"
+msgstr "Fehlgeschlagene Zahlungsumleitung URL"
+
+#: admin/setup/wdplugin-widget-list.php:178
+msgid "The URL where the donor is sent after a failed payment."
+msgstr ""
+"Die Seite, an die der Spender nach einer fehlgeschlagenen Zahlung geschickt "
+"wird."
+
+#: includes/shortcode-app-view.php:339 includes/shortcode-app-view.php:371
+msgid "No Data Found"
+msgstr "Keine Daten gefunden"
+
+#: includes/shortcode-app-view.php:367
+msgid "closed"
+msgstr "geschlossen"
+
+#: includes/shortcode-app-view.php:384
+msgid "Fundraiser is either closed by time or owner closed it!"
+msgstr ""
+"Die Spendenaktion ist entweder zeitlich geschlossen oder der Besitzer hat "
+"sie geschlossen!"
+
+#: includes/shortcode-app-view.php:524
+msgid "Minimum amount €5"
+msgstr ""
+
+#: includes/shortcode-app-view.php:532 includes/shortcode-app-view.php:537
+msgid "Must be between 1 and 30 characters."
+msgstr "Muss zwischen 1 und 30 Zeichen lang sein."
+
+#: includes/shortcode-app-view.php:542
+msgid "Please enter a valid email."
+msgstr "Bitte geben Sie eine gültige E-Mail ein."
+
+#: includes/shortcode-app-view.php:564
+msgid ""
+"By donate you agree to our <a href=\"https://www.whydonate.nl/terms-and-"
+"conditions/?lang=en\" target=\"blank\">Terms and Conditions</a>"
+msgstr ""
+"Mit Ihrer Spende erklären Sie sich mit unseren <a href=\"https://www."
+"whydonate.eu/terms-and-conditions/?lang=en\" target=\"blank\">Allgemeinen "
+"Geschäftsbedingungen einverstanden</a>"
+
+#: whydonate-v2.php:201
+msgid ""
+"Thanks for updating. If you see any database error message please ignore "
+"those and refresh the page."
+msgstr ""
+"Danke für die Aktualisierung. Wenn Sie eine Datenbankfehlermeldung sehen, "
+"ignorieren Sie diese bitte und aktualisieren Sie die Seite."
+
+#: whydonate-v2.php:387
+msgid ""
+"If you updated the Whydonate plugin, you need to remove the old shortcode "
+"and replace it with the new one in order to make it work."
+msgstr ""
+"Wenn Sie das Whydonate-Plugin aktualisiert haben, müssen Sie den alten "
+"Shortcode entfernen und durch den neuen ersetzen, damit es funktioniert."
+
+#~ msgid ""
+#~ "<a href=\"https://www.whydonate.nl/terms-and-conditions/?lang=en\" style="
+#~ "\"margin-left: 80px\" target=\"blank\">Terms and Conditions</a>"
+#~ msgstr ""
+#~ "<a href=\"https://www.whydonate.eu/terms-and-conditions/?lang=en\" target="
+#~ "\"blank\">Allgemeinen Geschäftsbedingungen einverstanden</a>"
+
+#~ msgid ""
+#~ "By donating you agree to our <a href=\"https://www.whydonate.eu\" target="
+#~ "\"blank\">Powered by Whydonate</a>"
+#~ msgstr ""
+#~ "Mit Ihrer Spende erklären Sie sich mit unseren <a0 href=\"https://www."
+#~ "whydonate.nl/terms-and-conditions/?lang=en\" target=\"blank\">Allgemeinen "
+#~ "Geschäftsbedingungen einverstanden</a0>."
+
+#~ msgid ""
+#~ "This is the URL to which the donor will be sent after making the "
+#~ "donation. This applies to both a donation that has not been successfully "
+#~ "completed."
+#~ msgstr ""
+#~ "Dies ist die URL, an die der Spender nach der Spende geschickt wird. Dies "
+#~ "gilt sowohl für eine nicht erfolgreich abgeschlossene Spende."
+
+#~ msgid ""
+#~ "By donating you agree to our <a href=\"https://www.whydonate.eu/terms-and-"
+#~ "conditions/?lang=en\" target=\"blank\">Terms and Conditions</a>."
+#~ msgstr ""
+#~ "Mit Ihrer Spende erklären Sie sich mit unseren <a href=\"https://www."
+#~ "whydonate.eu/terms-and-conditions/?lang=en\" target=\"blank\">Allgemeinen "
+#~ "Geschäftsbedingungen einverstanden</a>."
+
+#~ msgid "Please enter your first name."
+#~ msgstr "Muss zwischen 1 und 30 Zeichen lang sein "
+
+#~ msgid "Please enter your last name."
+#~ msgstr "Muss zwischen 1 und 30 Zeichen lang sein "
+
+#~ msgid ""
+#~ "<a href=\"https://www.whydonate.eu\" style=\"margin-left: 80px\" target="
+#~ "\"blank\">Powered by Whydonate</a>"
+#~ msgstr ""
+#~ "<a href=\"https://www.whydonate.eu\" target=\"blank\">Angetrieben von "
+#~ "Whydonate</a>"

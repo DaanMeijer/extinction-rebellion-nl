@@ -1,0 +1,13 @@
+{
+  "name": "shuvo/whydonate-v2",
+  "authors": [
+    {
+      "name": "ShuvoHassan",
+      "email": "shuvo.hassan@hotmail.com"
+    }
+  ],
+  "require": {
+    "sentry/sentry": "2.0.1",
+    "sentry/sdk": "2.0.3"
+  }
+}

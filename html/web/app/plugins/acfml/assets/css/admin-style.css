@@ -1,0 +1,12 @@
+.acfml-not-migrated {
+    color: red;
+}
+
+.acfml-advice-copy-setting {
+    color: yellow;
+}
+
+.wpml_acf_original_value {
+    margin-top: 5px;
+    color: #999;
+}

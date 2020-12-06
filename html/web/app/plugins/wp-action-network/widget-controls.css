@@ -1,0 +1,7 @@
+.widget-control { margin-bottom: 20px; }
+.widget-control label { font-weight: bold; }
+.widget-control-description p { font-size: 11px; margin: 0 0 4px; }
+.widget-control-description code { font-size: 11px; padding: 1px; }
+.widget-control-code input, .widget-control-code textarea { font-family: Consolas,Monaco,Courier,monospace; }
+
+.widget-control label.checkboxes-option { font-weight: normal; }

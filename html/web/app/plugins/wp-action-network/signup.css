@@ -1,0 +1,40 @@
+.actionnetwork-signup-message { margin-bottom: 1em; }
+.actionnetwork-signup-form ul { list-style: none outside none; margin: 0; padding: 0; }
+.actionnetwork-signup-form ul li { margin: 0 0 1em; padding: 0; }
+.actionnetwork_signup_widget input.error { border-color: #f00; }
+.actionnetwork_signup_widget .error { color: #f00; }
+
+@-webkit-keyframes Rotate {
+	from {
+		-webkit-transform: rotate(0deg);
+	} to {
+		-webkit-transform: rotate(360deg);
+	}
+}
+@-moz-keyframes Rotate {
+	from {
+		-moz-transform: rotate(0deg);
+	} to {
+		-moz-transform: rotate(360deg);
+	}
+}
+@-o-keyframes Rotate {
+	from {
+		-o-transform: rotate(0deg);
+	} to {
+		-o-transform: rotate(360deg);
+	}
+}
+@keyframes Rotate {
+	from {
+		transform: rotate(0deg);
+	} to {
+		transform: rotate(360deg);
+	}
+}
+
+.actionnetwork-signup-form .actionnetwork-signup-submit-wrapper { position: relative; }
+.actionnetwork-signup-form .actionnetwork-signup-submit-wrapper input { transition: padding-left 0.5s; }
+.actionnetwork-signup-form .actionnetwork-signup-submit-wrapper:after { content: ''; position: absolute; left: 10px; top: 11px; z-index: 5; width: 15px; height: 15px; background: transparent url(icon-action-network.png)  no-repeat center center; background-size: 15px 15px; display: none; -webkit-animation: Rotate 1s linear infinite; -moz-animation: Rotate 1s linear infinite; -o-animation: Rotate 1s linear infinite; animation: Rotate 1s linear infinite;}
+.actionnetwork-signup-form.submitting .actionnetwork-signup-submit-wrapper input { padding-left: 32px; }
+.actionnetwork-signup-form.submitting .actionnetwork-signup-submit-wrapper:after { display: block; }

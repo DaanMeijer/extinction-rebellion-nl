@@ -1,0 +1,3 @@
+			(function($) {
+				Grid.init();
+			})(jQuery);

@@ -1,0 +1,16 @@
+/* Settings Page */
+#em-options-form .postbox.em-oaut-connect-user .em-oauth-service-info { max-width:1000px; min-height: 75px; }
+#em-options-form .postbox.em-oaut-connect-user .em-oauth-service-logo { float:left; width:50px; height:50px; }
+
+#em-options-form .postbox.em-oaut-connect li.em-oauth-service-account { clear:both; height:16px; padding-bottom:10px; }
+#em-options-form .postbox.em-oaut-connect li.em-oauth-service-account img, #em-options-form .postbox.em-oaut-connect li.em-oauth-service-account > div { float:left; }
+#em-options-form .postbox.em-oaut-connect li.em-oauth-service-account > div { padding: 5px 0 5px 8px; }
+#em-options-form .postbox.em-oaut-connect li.em-oauth-account-disconnected img, #em-options-form .postbox.em-oaut-connect li.em-oauth-account-disconnected .em-oauth-account-label { opacity:0.5; }
+#em-options-form .postbox.em-oaut-connect li.em-oauth-account-disconnected .dashicons { width:16px; height: 16px; font-size: 16px; }
+
+@media screen and (max-width: 600px) {
+	#em-options-form .postbox.em-oaut-connect .em-oauth-service-logo { margin:0px 10px 10px 0px; }
+	#em-options-form .postbox.em-oaut-connect .em-oauth-connect-button { margin: 10px 0px 10px 10px; }
+	#em-options-form .postbox.em-oaut-connect .em-oauth-service-info h2 { margin: 0px 0px 5px; padding:0px 5px; }
+	#em-options-form .postbox.em-oaut-connect .em-oauth-service-info { clear:both; margin:0px; }
+}

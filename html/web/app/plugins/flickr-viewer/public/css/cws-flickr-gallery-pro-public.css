@@ -1,0 +1,248 @@
+/**
+ * All of the CSS for public-facing functionality
+ */
+
+#mygallery a {
+	border-bottom: none;
+}
+
+.justified-gallery a {
+	border-bottom: none !important;
+}
+
+.justified-gallery img {
+	padding: 4px !important;
+}
+
+.justified-gallery > a > .caption.caption-visible, 
+.justified-gallery > div > .caption.caption-visible {
+	margin: 4px !important;
+}
+
+
+.grid {
+	width:100%;
+}
+
+/* Centre Photos Grid */
+.grid.js-masonry{
+	margin: 0 auto;
+}
+
+/*.grid .thumbnail {
+	width:30%;
+	float: left;
+}*/
+
+/* Image border */
+/*.grid img  
+{
+	margin: 5px;
+	padding: 5px;
+	border: 1px solid #efefef;
+	background: #fff;
+	-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset;
+	-moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset; 
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset;
+}*/
+
+.details li {
+	list-style: none;
+	margin-left: 0 !important;
+}
+
+li.details {
+	font-size: small;
+}
+
+.details.albums {
+	text-shadow: 0 1px 1px #000;
+	color: #f2f2f2;
+}
+
+ /* ---------------------------------------
+	grid.php - gridview
+--------------------------------------- */
+
+.grid .details {
+	padding: 5px 12px 6px;	
+	/* padding-bottom: 25px; */ /* reoved tis as was causing excessive whitespace in gallery grid, nned to check if it was requried for download icon! */
+	padding-bottom: 25px;
+}
+
+.grid-item {
+	/*
+  width: 230px;
+  xheight: 120px;
+  float: left;
+  background: #D26;
+  border: 2px solid #333;
+  border-color: hsla(0, 0%, 0%, 0.5);
+  border-radius: 5px;
+*/
+    background: #fff none repeat scroll 0 0;
+/*    border-radius: 6px;
+*/    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+/*    width: 230px;
+*/    margin-top: 15px;
+}
+
+/*.my-button{
+	display: inline-block;
+	padding: 8px 12px;
+	background: #eee;
+	border: solid 1px #D5D5D5;
+}
+.my-button span{
+	display: inline-block;
+}*/
+/*.my-button span:before{
+	font-family: 'FontAwesome';
+	content: '\f085';
+	position: relative;
+	margin-right: 5px;
+	font-size: 110%;
+}*/
+
+ /* ---------------------------------------
+	list.php - listview
+--------------------------------------- */
+
+/*.listview .thumbnail{
+    height: 100%;
+    padding: 50px 30px;
+}*/
+
+.listview {
+	width: 100%;
+}
+
+.listview .thumbnail {
+	width: 100%;
+	clear: both; /* fix flow bug with small thumbnails */
+}
+.thumbnail .detail-meta {
+/*	height: 200px;
+*/	overflow: hidden;
+}
+.listview .thumbimage{
+	float: left;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+	/* width: 300px;	*/ /* move this to embeded style to make more dynamic */
+}
+
+ .listview .details{
+	float: left;
+    overflow: hidden;
+    position: relative;
+	padding: 5px 12px 6px;	
+}
+
+.details-meta {
+	height: auto;
+}
+
+ /* ---------------------------------------
+	results_grid.php - gridview
+--------------------------------------- */
+.thumbnails {
+	position: relative;
+}
+
+.grid .thumbnail {
+   margin: 10px;
+   float: left;
+   border: 10px solid #fff;
+   overflow: hidden;
+   position: relative;
+   /*text-align: center;*/
+   text-align: left;
+   /*border-bottom: 30px solid #fff;*/
+   border-bottom: 10px solid #fff;
+}
+ /* ---------------------------------------
+	Pagination
+--------------------------------------- */
+
+div.cws-pagination {
+	margin-top: 35px;
+	padding-top: 50px;
+	clear: both;
+	text-align: center;
+	position: relative;
+}
+
+.page-nav li 
+{
+	display: inline;
+	margin: 5px !important;
+
+}
+
+ .page-nav a {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-size: 12px;
+	line-height: 35px;
+	
+	color: #717171;
+	padding: 5px 10px;
+	background: -moz-linear-gradient(
+		top,
+		#f9f9f9 0%,
+		#eaeaea);
+	background: -webkit-gradient(
+		linear, left top, left bottom, 
+		from(#f9f9f9),
+		to(#eaeaea));
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border: 1px solid #c9c9c9;
+	-moz-box-shadow:
+		0px 1px 3px rgba(255,255,255,0.5),
+		inset 0px 0px 1px rgba(255,255,255,1);
+	-webkit-box-shadow:
+		0px 1px 3px rgba(255,255,255,0.5),
+		inset 0px 0px 1px rgba(255,255,255,1);
+}
+
+ .page-nav a:hover,
+ li.selected a {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-size: 12px;
+	color: #717171;
+	padding: 5px 10px;
+	background: -moz-linear-gradient(
+		top,
+		#696969 0%,
+		#505050);
+	background: -webkit-gradient(
+		linear, left top, left bottom, 
+		from(#696969),
+		to(#505050));
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border: 1px solid #4f4f4f;
+	-moz-box-shadow:
+		0px 1px 3px rgba(255,255,255,0.5),
+		inset 0px 0px 1px rgba(79,79,79,1);
+	-webkit-box-shadow:
+		0px 1px 3px rgba(255,255,255,0.5),
+		inset 0px 0px 1px rgba(79,79,79,1);
+	text-shadow:
+		0px -1px 0px rgba(000,000,000,0.7),
+		0px 1px 0px rgba(255,255,255,0.3);
+
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+
+
+/* Some Overrides */
+.slick-prev::before, .slick-next::before {
+    color: grey !important;
+}
