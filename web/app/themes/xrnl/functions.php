@@ -2,9 +2,6 @@
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 include_once(ABSPATH . 'wp-admin/includes/image.php' );
 
-define('ALLOW_EVENT_REQUEST_FROM_IP', '185.203.114.171');
-//define('ALLOW_EVENT_REQUEST_FROM_IP', '172.18.0.1');
-
 add_theme_support("post-thumbnails");
 add_theme_support("custom-logo");
 add_theme_support( 'title-tag' );

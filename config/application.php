@@ -86,6 +86,8 @@ Config::define('SECURE_AUTH_SALT', env('SECURE_AUTH_SALT'));
 Config::define('LOGGED_IN_SALT', env('LOGGED_IN_SALT'));
 Config::define('NONCE_SALT', env('NONCE_SALT'));
 
+define('ALLOW_EVENT_REQUEST_FROM_IP', env('ALLOW_EVENT_REQUEST_FROM_IP') ?: '127.0.0.1');
+
 /**
  * Custom Settings
  */
