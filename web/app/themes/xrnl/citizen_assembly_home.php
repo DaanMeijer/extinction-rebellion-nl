@@ -43,7 +43,14 @@ get_header(); ?>
   <div class="join">
     <div class="text-center py-5 px-3 flag">
       <div class="text-uppercase font-xr"><?php the_field('flag_title'); ?></div>
-      <div><?php the_field('flag_text'); ?></div>
+      <div><a data-toggle="collapse" href="#flag-dropdown" role="button" aria-expanded="false"
+          aria-controls="flag-dropdown"><?php the_field('flag_text'); ?></a>
+      </div>
+      <div class="text-left collapse justify-content-center row" id="flag-dropdown">
+        <div class="col-xl-5 col-10 align-self-center pt-3">
+          <?php the_field('flag_dropdown'); ?>
+        </div>
+      </div>
     </div>
   </div>
 

@@ -296,7 +296,7 @@ $logo-bg-bottom-shift: $logo-bottom-shift - ( ($logo-bg-diameter - $logo-diamete
 
   .actions-list {
     .action-item {
-      margin-top: 1.2rem;
+      margin-top: 3rem;
       .action-item-title {
         font-family: $brand-font;
         font-size: 1.4rem;
@@ -425,6 +425,25 @@ $logo-bg-bottom-shift: $logo-bottom-shift - ( ($logo-bg-diameter - $logo-diamete
   #pictures {
     .picture-gallery {
       min-height: 80vh;
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        background-color: $xr-black;
+        padding: .9rem;
+        &:hover {
+          background-color: $xr-primary;
+        }
+      }
+      .carousel-control-prev,
+      .carousel-control-next {
+        align-items: flex-start;
+        opacity: 1;
+      }
+      .carousel-control-prev {
+        justify-content: flex-start;
+      }
+      .carousel-control-next {
+        justify-content: flex-end;
+      }
     }
   }
 

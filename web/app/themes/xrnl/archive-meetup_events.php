@@ -4,25 +4,16 @@
  * Template name: Events
  */
 
-// city query param
-$param_city = stripslashes(get_query_var('city'));
+$param_organizer = stripslashes(get_query_var('organizer'));
 $param_category = stripslashes(get_query_var('category'));
 
-// city query
-$query_city = $param_city ? array(
-	'key' => 'venue_city',
-	'value' => $param_city,
-	'compare' => '='
+// organizer query
+$query_organizer = $param_organizer ? array(
+	'key' => 'organizer_name',
+	'value' => $param_organizer,
+	'compare' => '=',
+	'sentence' => true
 ) : array();
-
-
-if ($param_city == 'Online') {
-	$query_city = array(
-		'key' => 'venue_address',
-		'value' => $param_city,
-		'compare' => '='
-	);
-}
 
 // page query param
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -42,7 +33,7 @@ $args = array(
 			'compare' => '>=', // Return the ones greater than today's date
 			'type' => 'DATE' // Let WordPress know we're working with date
 		),
-		$query_city
+		$query_organizer
 	)
 );
 // push the taxonomy search if the category parameter is found:
@@ -60,8 +51,7 @@ if ($param_category) {
 
 $events = new WP_Query($args);
 
-$cities = event_cities();
-$categories = event_categories();
+$param_values = event_params();
 
 $events_page_id = (apply_filters('wpml_current_language', NULL) === 'nl') ? 548 : 567;
 $featured_event = get_field('featured_event', $events_page_id);
@@ -90,43 +80,34 @@ get_header(); ?>
 		</div>
 	<?php endif; ?>
 
-	<h1 class="page-title"><?php _e('EVENTS'); ?> <?php echo $param_city; ?></h1>
+	<h1 class="page-title"><?php _e('EVENTS'); ?> <?php echo $param_organizer; ?></h1>
 	<p><?php the_field('intro_text', $events_page_id); ?></p>
 
-	<?php if ($cities || $categories) { ?>
+	<?php if ($param_values['organizers'] || $param_values['categories']) { ?>
 		<form class="mt-4 flex-nowrap" method="get">
 			<div class="form-row">
 				<input type="hidden" name="paged" value="1" />
-				<?php if ($cities) { ?>
-					<label class="my-1 mr-sm-2" for="city"><?php _e('Location') ?></label>
+				<?php if ($param_values['organizers']) { ?>
+					<label class="my-1 mr-sm-2" for="organizer"><?php _e('Organizer') ?></label>
 					<div class="col-sm-3">
-						<select name="city" class="custom-select my-1 form-control" id="city">
+						<select name="organizer" class="custom-select my-1 form-control" id="organizer">
 							<option value=""><?php _e('All') ?></option>
 							<option disabled>──────</option>
-							<?php if (array_key_exists('Online', $cities)) { ?>
-								<option value='Online' <?php echo $param_city == 'Online' ? 'selected="selected"' : '' ?>>
-									Online (<?php echo $cities['Online'] ?>)
-								</option>
-								<option disabled>──────</option>
-							<?php } ?>
-							<?php foreach ($cities as $city => $count) {
-								if ($city == 'Online') {
-									continue;
-								} ?>
-								<option value="<?php echo $city ?>" <?php echo $param_city == $city ? 'selected="selected"' : '' ?>>
-									<?php echo $city . ' (' . $count . ')' ?>
+							<?php foreach ($param_values['organizers'] as $organizer => $count) { ?>
+								<option value="<?php echo $organizer ?>" <?php echo $param_organizer == $organizer ? 'selected="selected"' : '' ?>>
+									<?php echo $organizer . ' (' . $count . ')' ?>
 								</option>
 							<?php } ?>
 						</select>
 					</div>
 				<?php } ?>
-				<?php if ($categories) { ?>
+				<?php if ($param_values['categories']) { ?>
 					<label class="my-1 mx-sm-2" for="category"><?php _e('Category') ?></label>
 					<div class="col-sm-3">
 						<select name="category" class="custom-select my-1 form-control" id="category">
 							<option value=""><?php _e('All') ?></option>
 							<option disabled>──────</option>
-							<?php foreach ($categories as $category => $count) { ?>
+							<?php foreach ($param_values['categories'] as $category => $count) { ?>
 								<option value="<?php echo $category ?>" <?php echo $param_category == $category ? 'selected="selected"' : '' ?>>
 									<?php echo $category . ' (' . $count . ')' ?>
 								</option>

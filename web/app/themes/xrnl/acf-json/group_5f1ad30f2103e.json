@@ -3,6 +3,24 @@
     "title": "Local group",
     "fields": [
         {
+            "key": "field_60327fcb79fd0",
+            "label": "Instructions",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "message": "Check out <a href=\"https:\/\/cloud.extinctionrebellion.nl\/index.php\/s\/3eF2cnetwEHRxFk\">this document<\/a> for more information on how to fill in the fields below.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
             "key": "field_5f43aecadd569",
             "label": "Group name",
             "name": "group_name",
@@ -432,7 +450,7 @@
                     "label": "Content",
                     "name": "content",
                     "type": "textarea",
-                    "instructions": "",
+                    "instructions": "Use line breaks to start a new paragraph",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -440,12 +458,12 @@
                         "class": "",
                         "id": ""
                     },
+                    "wpml_cf_preferences": 0,
                     "default_value": "",
                     "placeholder": "",
                     "maxlength": "",
-                    "rows": "",
-                    "new_lines": "",
-                    "wpml_cf_preferences": 0
+                    "rows": 10,
+                    "new_lines": "wpautop"
                 },
                 {
                     "key": "field_5f478d570a024",
@@ -547,7 +565,7 @@
                     "collapsed": "",
                     "min": 0,
                     "max": 0,
-                    "layout": "table",
+                    "layout": "row",
                     "button_label": "Add Demand",
                     "sub_fields": [
                         {
@@ -574,8 +592,8 @@
                             "key": "field_5f240df920522",
                             "label": "Description",
                             "name": "description",
-                            "type": "text",
-                            "instructions": "",
+                            "type": "textarea",
+                            "instructions": "Use line breaks to start a new paragraph",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -583,12 +601,12 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "wpml_cf_preferences": 0,
                             "default_value": "",
                             "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
+                            "maxlength": "",
+                            "rows": "",
+                            "new_lines": "wpautop",
+                            "wpml_cf_preferences": 0
                         }
                     ]
                 }
@@ -667,7 +685,7 @@
                     "collapsed": "",
                     "min": 0,
                     "max": 0,
-                    "layout": "table",
+                    "layout": "row",
                     "button_label": "Add Action",
                     "sub_fields": [
                         {
@@ -695,7 +713,7 @@
                             "label": "Description",
                             "name": "description",
                             "type": "textarea",
-                            "instructions": "",
+                            "instructions": "Use line breaks to start a new paragraph",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -703,12 +721,12 @@
                                 "class": "",
                                 "id": ""
                             },
+                            "wpml_cf_preferences": 0,
                             "default_value": "",
                             "placeholder": "",
                             "maxlength": "",
-                            "rows": "",
-                            "new_lines": "",
-                            "wpml_cf_preferences": 0
+                            "rows": 10,
+                            "new_lines": "wpautop"
                         },
                         {
                             "key": "field_5f478e018a629",
@@ -838,7 +856,7 @@
                     "label": "Show section",
                     "name": "enabled",
                     "type": "true_false",
-                    "instructions": "Shows local events tab if there are any events (for the place that is entered in the <a href=\"#lg-place\">place<\/a> field)",
+                    "instructions": "If there are any events that are organised by the group, or are in the same <a href=\"#lg-place\">place<\/a>, they will appear in the Events tab when this is checked.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -1178,5 +1196,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1605130535
+    "modified": 1613923757
 }

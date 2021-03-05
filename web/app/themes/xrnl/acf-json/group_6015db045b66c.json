@@ -91,7 +91,7 @@
                     "key": "field_60168219d78aa",
                     "label": "tile url",
                     "name": "tile_url",
-                    "type": "page_link",
+                    "type": "link",
                     "instructions": "",
                     "required": 1,
                     "conditional_logic": 0,
@@ -100,11 +100,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "post_type": "",
-                    "taxonomy": "",
-                    "allow_null": 0,
-                    "allow_archives": 1,
-                    "multiple": 0,
+                    "return_format": "array",
                     "wpml_cf_preferences": 0
                 }
             ]
@@ -150,6 +146,26 @@
             "maxlength": ""
         },
         {
+            "key": "field_601d4843635fe",
+            "label": "flag dropdown",
+            "name": "flag_dropdown",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0,
+            "wpml_cf_preferences": 0
+        },
+        {
             "key": "field_6015dcb2b328a",
             "label": "End note",
             "name": "end_note",
@@ -187,5 +203,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1612092639
+    "modified": 1612531814
 }

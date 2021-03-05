@@ -74,6 +74,7 @@
       'meta_key' => 'event_start_date',
       'order' => 'ASC',
       'meta_query' => array(
+        'relation' => 'AND',
         array(
           'key' => 'event_start_date',
           'value' => date("Y-m-d"),
@@ -81,9 +82,17 @@
           'type' => 'DATE'
         ),
         array(
-          'key' => 'venue_city',
-          'value' => get_field('place'),
-          'compare' => '='
+          'relation' => 'OR',
+          array(
+            'key' => 'venue_city',
+            'value' => get_field('place'),
+            'compare' => '='
+          ),
+          array(
+            'key' => 'organizer_name',
+            'value' => get_field('group_name'),
+            'compare' => 'REGEXP'
+          )
         )
       )
     );
@@ -206,7 +215,7 @@
         <div class="row">
           <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-6 mx-auto">
             <h1><?php echo($section->heading); ?></h1>
-            <p><?php echo($section->content); ?></p>
+            <div><?php echo($section->content); ?></div>
             <?php if (!empty($section->picture_url)) : ?>
               <img src="<?php echo($section->picture_url); ?>" alt="Extinction Rebellion <?php the_field('group_name'); ?>">
             <?php endif; ?>
@@ -226,7 +235,7 @@
                 <?php foreach ($section->demands_list as $demand) : ?>
                 <div class="demands-item">
                   <h5 class="demands-item-title"><?php echo($demand['title']); ?></h5>
-                  <p class="demands-item-desc"><?php echo($demand['description']); ?></p>
+                  <div class="demands-item-desc"><?php echo($demand['description']); ?></div>
                 </div>
                 <?php endforeach; ?>
               </div>
@@ -247,7 +256,7 @@
                 <?php foreach ($section->actions_list as $action) : ?>
                 <div class="action-item">
                   <h5 class="action-item-title"><?php echo($action['title']); ?></h5>
-                  <p class="action-item-desc"><?php echo($action['description']); ?></p>
+                  <div class="action-item-desc"><?php echo($action['description']); ?></div>
                   <?php if (isset($action['picture_url'])) : ?>
                     <img src="<?php echo($action['picture_url']); ?>" alt="Extinction Rebellion <?php the_field('group_name'); ?>">
                   <?php endif; ?>

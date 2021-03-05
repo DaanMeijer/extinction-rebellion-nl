@@ -280,8 +280,8 @@ add_filter( 'register_post_type_args', function($args, $post_type){
     return $args;
 }, 10, 2 );
 
-// Get Distinct Event cities
-function event_cities() {
+// Get Distinct Event params
+function event_params() {
     $args = array(
         'posts_per_page' => 1e9,
         'post_type' => 'meetup_events',
@@ -297,49 +297,20 @@ function event_cities() {
     );
 
     $events = new WP_Query( $args );
-    $cities = array();
-
-    while ( $events->have_posts() ) {
-        $events->the_post();
-        $city = get_post_meta( get_the_ID(), 'venue_city', true );
-        $venue = get_post_meta( get_the_ID(), 'venue_address', true );
-        if ($venue == 'Online'){
-            $city = 'Online';
-        } elseif ($city == ''){
-            continue;
-        }
-        if (array_key_exists($city, $cities)) {
-            $cities[$city]++;
-        } elseif ($city != '') {
-            $cities[$city] = 1;
-        }
-    }
-    ksort($cities);
-
-    return $cities;
-}
-
-// Get Distinct Event categories
-function event_categories() {
-    $args = array(
-        'posts_per_page' => 1e9,
-        'post_type' => 'meetup_events',
-        'fields' => 'ids',
-        'meta_query' => array(
-            array(
-                'key' => 'event_start_date', // Check the start date field
-                'value' => date("Y-m-d"), // Set today's date (note the similar format)
-                'compare' => '>=', // Return the ones greater than today's date
-                'type' => 'DATE' // Let WordPress know we're working with date
-            )
-        )
-    );
-
-    $events = new WP_Query( $args );
-
+    $organizers = array();
     $categories = array();
+
     while ( $events->have_posts() ) {
         $events->the_post();
+        $organizer = get_post_meta( get_the_ID(), 'organizer_name', true );
+        if ($organizer != ''){
+            if (array_key_exists($organizer, $organizers)) {
+                $organizers[$organizer]++;
+            } else {
+                $organizers[$organizer] = 1;
+            }
+        }
+        $venue = get_post_meta( get_the_ID(), 'venue_address', true );
 
         $term_obj_list = get_the_terms(get_the_ID(), 'meetup_category');
         if($term_obj_list) {
@@ -347,7 +318,6 @@ function event_categories() {
         } else {
             continue;
         }
-
 
         foreach($post_categories as $post_category) {
             if(array_key_exists($post_category, $categories)) {
@@ -357,9 +327,14 @@ function event_categories() {
             }
         }
     }
+
+    ksort($organizers);
     ksort($categories);
 
-    return $categories;
+    return array(
+        'organizers'  => $organizers,
+        'categories' => $categories
+    );
 }
 
 // Get Distinct Vacancy working and local groups
@@ -387,8 +362,9 @@ function vacancy_groups( $vacancies ) {
 }
 
 function xrnl_query_vars( $qvars ) {
-    $qvars[] = 'city';
+    $qvars[] = 'organizer';
     $qvars[] = 'category';
+    $qvars[] = 'type';
     $qvars[] = 'working_group';
     $qvars[] = 'local_group';
     return $qvars;
@@ -408,18 +384,17 @@ function excerpt($limit) {
 }
 
 /**
- * Grab events from database
- *
- * @param array $data None, city, category or both
+ * Grab events from database with draft or publish status
+ * Fetches all events when a filter is missing
+ * @param array $data Empty, city, category, since_date, until_date or a combination
  * @return array Of events that satisfy the request
  */
 function events_query( $data ) {
-  //if($_SERVER['REMOTE_ADDR'] != '127.0.0.1'){ return "IP " . $_SERVER['REMOTE_ADDR'] . " detected. Only localhost is allowed " . $_SERVER['SERVER_ADDR']; }
-
   global $wpdb;
 
   $params = [];
   $suffix = "";
+  // city filter
   if($data['city'] != NULL)  {
     if ($data['city'] == 'Online') {
       $suffix = $suffix . " AND pm_address.meta_value = %s";
@@ -432,21 +407,28 @@ function events_query( $data ) {
     }
   }
 
+  // category filter
   if($data['category'] != NULL) {
     $suffix = $suffix . " AND t.name = %s";
     array_push($params, $data['category']);
   }
 
+  // since_date filter
   if($data['since_date'] != NULL) {
     $suffix = $suffix . " AND pm_start_ts.meta_value >= %s";
     array_push($params, $data['since_date']);
   }
 
+  // until_date filter
   if($data['until_date'] != NULL) {
     $suffix = $suffix . " AND pm_start_ts.meta_value <= %s";
     array_push($params, $data['until_date']);
   }
 
+  // meta_query is used to fetch all the data of an event that is not in the posts table
+  // it fetches not only meta data but also essential event information
+  // this is needed for fields like organizer_name or venue_address
+  // but it also contains fields for the fb-events-syncer script like facebook_id, so the script knows which event is which
   $meta_query = "SELECT * FROM {$wpdb->postmeta} pm WHERE pm.post_id IN
                   (SELECT p.ID
                   FROM {$wpdb->posts} p
@@ -475,6 +457,7 @@ function events_query( $data ) {
                   AND pm_start_ts.meta_key = 'start_ts' {$suffix}
                   AND (p.post_status = 'publish' OR p.post_status = 'draft'))";
 
+   // query is the primary sql query for fetching the events
   $query = "SELECT p.ID as id, p.post_title as title, p.post_content as content, p.post_status as status, t.name as category
             FROM {$wpdb->posts} p
             LEFT JOIN {$wpdb->term_relationships} tr
@@ -502,12 +485,14 @@ function events_query( $data ) {
             AND pm_start_ts.meta_key = 'start_ts' {$suffix}
             AND (p.post_status = 'publish' OR p.post_status = 'draft')";
 
+  // use seperate params to avoid SQL-injection
   $prepared_sql = $wpdb->prepare($query, $params);
   $prepared_meta = $wpdb->prepare($meta_query, $params);
 
   $events = $wpdb->get_results($prepared_sql, OBJECT);
   $metas = $wpdb->get_results($prepared_meta, OBJECT);
 
+  // preparation for populating the event objects with meta data
   $metas_by_id = array();
   foreach($metas as $meta) {
     if($metas_by_id[$meta->post_id]) {
@@ -517,6 +502,7 @@ function events_query( $data ) {
     }
   }
 
+  // populate the event objects with meta data
   foreach($events as $event) {
     $single_metas = $metas_by_id[$event->id];
     $event->meta = $single_metas;
@@ -528,12 +514,21 @@ function events_query( $data ) {
   return $events;
 }
 
-
+/**
+ * Fetches one event
+ * @param $data Must contain the id of the event
+ * @return The event
+ */
 function get_event($data) {
   global $wpdb;
 
+  // meta_query is used to fetch all the data of an event that is not in the posts table
+  // it fetches not only meta data but also essential event information
+  // this is needed for fields like organizer_name or venue_address
+  // but it also contains fields for the fb-events-syncer script like facebook_id, so the script knows which event is which
   $meta_query = "SELECT * FROM {$wpdb->postmeta} pm WHERE pm.post_id = %s";
 
+  // primary sql query
   $query = "SELECT p.ID as id, p.post_title as title, p.post_content as content, p.post_status as status, t.name as category
             FROM {$wpdb->posts} p
             LEFT JOIN {$wpdb->term_relationships} tr
@@ -548,12 +543,14 @@ function get_event($data) {
 
             WHERE p.ID = %s";
 
+  // Use seperate parameters against SQL injection
   $prepared_sql = $wpdb->prepare($query, $data['id']);
   $prepared_meta = $wpdb->prepare($meta_query, $data['id']);
 
   $event = $wpdb->get_results($prepared_sql, OBJECT);
   $metas = $wpdb->get_results($prepared_meta, OBJECT);
 
+  // Populate the event object with meta data
   foreach($metas as $meta) {
     if($event['meta'] != NULL) {
       $event['meta'][$meta->meta_key] = $meta->meta_value;
@@ -571,13 +568,17 @@ function get_event($data) {
 }
 
 /**
- * Insert event into  database
+ * Insert event into database
  * For now, all data must be suppplied as form-data
 */
 function insert_event($data) {
   $start_date = new DateTime($data['start_date']);
   $end_date = new DateTime($data['end_date']);
 
+  // put all the information from $data into the event
+  // hashes, like description_hash, are used to detect changes in facebook events
+  // facebook_id is needed to identify the wordpress event and link it to the original facebook event
+  // _thumbnail_id can be used to directly add an existing wordpress picture to the event
   $post = array(
     'post_title' => $data['title'],
     'post_content' => $data['content'],
@@ -622,19 +623,29 @@ function insert_event($data) {
     ),
   );
 
+  // When a picture_url is supplied, the following code creates a new attachment
+  // for the picture and uses the id of that attachment as _thumbnail_id
+  // Supplying an existing picture id as _thumbnail_id is enough to add that picture to the event
   if($data['picture_url'] != NULL) {
     $attach_id = uploadPicture($data['picture_url'], $data['title']);
     $post['meta_input']['_thumbnail_id'] = $attach_id;
   }
 
+  // create the post
   $err = wp_insert_post($post, true);
 
   if(!is_wp_error($err)) {
+    // if no error occured, turn the post into a meetup event
     wp_set_object_terms($err, $data['category'], 'meetup_category');
   }
   return $err;
 }
 
+/**
+ * Upload a picture as attachment and return it's id
+ * @param $url The web url of the picture
+ * @param $title The title of the picture. A random suffix will be added to it
+ */
 function uploadPicture($url, $title) {
   $extension = '.png';
   $mimeType = 'image/png';
@@ -644,15 +655,17 @@ function uploadPicture($url, $title) {
     $mimeType = 'image/jpeg';
   }
 
-
+  // filename must be random because of possible conflicts
   $filename = hash('md5', $title) . '_cover' . rand() . $extension;
   $uploaddir = wp_upload_dir();
   $uploadfile = $uploaddir['path'] . '/' . $filename;
+  // before creating an attachment, the actual picture data must be retrieved
   $contents= file_get_contents($url);
   $savefile = fopen($uploadfile, 'w');
   fwrite($savefile, $contents);
   fclose($savefile);
 
+  // create the attachment
   $attachment = array(
       'post_mime_type' =>$mimeType,
       'post_title' => $title,
@@ -673,6 +686,11 @@ function uploadPicture($url, $title) {
    return $attach_id;
 }
 
+/**
+ * Updates the contents of an existing picture (of an event)
+ * @param $url The web url of the picture
+ * @param $filename The filename that was used to save the picture
+ */
 function updatePicture($url, $filename) {
   $uploaddir = wp_upload_dir();
   $uploadfile = $filename;
@@ -698,6 +716,8 @@ function update_event($data) {
     'meta_input' => array()
   );
 
+  // Check if the picture needs updating
+  // If it does: get the filename of the original picture and update the contents
   if($data['picture_url'] != NULL){
     $original_post = get_post($data['id']);
     $thumbnail_id = get_post_meta($data['id'], '_thumbnail_id', true);
@@ -712,6 +732,7 @@ function update_event($data) {
     }
   }
 
+  // for all possible event fields: check if they need updating
   if($data['title'] != NULL) {
     $post['post_title'] = $data['title'];
   }
@@ -774,13 +795,16 @@ function update_event($data) {
     $post['meta_input']['event_end_meridian'] = $end_date->format('a');
     $post['meta_input']['end_ts'] = date_timestamp_get($end_date);
   }
+  // Use the id of an existing wordpress picture for the event
   if($data['thumbnail_id'] != NULL) {
     $post['meta_input']['_thumbnail_id'] = $data['thumbnail_id'];
   }
+  // facebook_id is needed to identify the event and link it to the facebook event
   if($data['facebook_id'] != NULL) {
     $post['meta_input']['facebook_id'] = $data['facebook_id'];
   }
 
+  // hash fields are need to detect changes of facebook events
   if($data['name_hash'] != NULL) {
     $post['meta_input']['name_hash'] = $data['name_hash'];
   }
@@ -806,8 +830,10 @@ function update_event($data) {
     $post['meta_input']['_cover_bytes_hash'] = $data['_cover_bytes_hash'];
   }
 
+  // update the post
   $err = wp_update_post($post, true);
 
+  // if no error occured: turn the post into a meetup event
   if(!is_wp_error($err) && $data['category'] != NULL) {
     wp_set_object_terms($err, $data['category'], 'meetup_category');
   }
@@ -821,7 +847,10 @@ add_filter( 'rest_authentication_errors', function( $result ) {
       return $result;
   }
 
+  // Check if the user made a request for the events API
   if(substr($_SERVER['REQUEST_URI'], 0, 19) == '/wp-json/events_api' ) {
+    // Only requests from the ip address in the .env file is allowed to make event requests
+    // no further authorization or authentication is performed
     if($_SERVER['REMOTE_ADDR'] != ALLOW_EVENT_REQUEST_FROM_IP) {
       return new WP_Error(
           'forbidden',
@@ -832,6 +861,9 @@ add_filter( 'rest_authentication_errors', function( $result ) {
       return true;
     }
   }
+
+  // If the requested document is not within the events API: the request is for the wordpress REST API
+  // Do the usual user authentication
 
   // No authentication has been performed yet.
   // Return an error if user is not logged in.
@@ -848,6 +880,7 @@ add_filter( 'rest_authentication_errors', function( $result ) {
   return $result;
 });
 
+// Add events API routes
 add_action( 'rest_api_init', function () {
   register_rest_route( 'events_api/v1', '/events/', array(
     'methods' => 'GET',

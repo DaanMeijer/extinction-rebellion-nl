@@ -23,12 +23,24 @@ jQuery(document).ready(function($){
     $('#lg-navigation .nav .nav-item').remove();
   };
 
-  // If the About Us section exists, make it active on page load (instead of Contact).
-  if ($('#about-nav').length) {
-    $('#about-nav').tab('show');
+  // See if a specific tab was requested in the URL
+  let URLParam = window.location.hash.substring(1);
+  if (sections.includes(URLParam)) {
+    var navID = ['#', URLParam, '-nav'].join('');
   }
 
-  // Needed to initate the carousel
+  // On page load, show the requested tab if it exists
+  // If no specific tab was requested, show the About-us section if it exists
+  // Otherwise, show the Contact tab as default
+  if ($(navID).length) {
+    $(navID).tab('show');
+  } else if ($('#about-nav').length) {
+    $('#about-nav').tab('show');
+  } else {
+    $('#contact-nav').tab('show');
+  }
+
+  // Initiate the carousel
   if ($('#pictures').length) {
     $('.carousel-item:first').addClass('active');
     $('.carousel-indicators > li:first').addClass('active');
